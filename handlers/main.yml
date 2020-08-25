@@ -1,0 +1,7 @@
+---
+# handlers file for mrjoshuap.issue
+
+- name: restart sshd
+  service:
+    name: '{{ issue_sshd_service_name }}'
+    state: restarted

@@ -1,0 +1,11 @@
+---
+# defaults file for mrjoshuap.issue
+
+issue_deploy: yes
+issue_template_src: issue.j2
+
+issue_net_deploy: yes
+issue_net_template_src: issue.net.j2
+
+issue_net_sshd_banner: yes
+issue_net_sshd_restart: yes

@@ -1,0 +1,31 @@
+---
+# tasks file for mrjoshuap.issue
+
+- name: Install {{ issue_location }}
+  template:
+    dest: '{{ issue_location }}'
+    src: '{{ issue_template_src }}'
+    owner: root
+    group: root
+    mode: '0644'
+    state: present
+  when: 'issue_deploy | bool'
+
+- name: Install {{ issue_net_location }}
+  template:
+    dest: '{{ issue_net_location }}'
+    src: '{{ issue_net_template_src }}'
+    owner: root
+    group: root
+    mode: '0644'
+    state: present
+  when: 'issue_net_deploy | bool'
+
+- name: Configure {{ issue_sshd_config_location }} to use {{ issue_net_location }} as banner
+  lineinfile:
+    path: '{{ issue_sshd_config_location }}'
+    regexp: '^Banner '
+    line: 'Banner {{ issue_net_location }}'
+  when: 'issue_net_sshd_banner | bool'
+  notify:
+    - restart sshd

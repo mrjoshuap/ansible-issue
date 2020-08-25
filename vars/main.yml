@@ -1,0 +1,8 @@
+---
+# vars file for mrjoshuap.issue
+
+issue_location: /etc/issue
+issue_net_location: /etc/issue.net
+
+issue_sshd_config_location: /etc/ssh/sshd_config
+issue_sshd_service_name: sshd

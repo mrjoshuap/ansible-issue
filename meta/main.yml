@@ -1,0 +1,25 @@
+galaxy_info:
+  author: Joshua Preston
+  description: Manage /etc/issue on Linux based systems
+  company: MrJoshuaP
+
+  license: GPL-2.0-or-later
+
+  min_ansible_version: 2.8
+
+  platforms:
+    - name: Fedora
+      versions:
+        - all
+    - name: el
+      versions:
+        - all
+
+  galaxy_tags:
+    - banner
+    - issue
+    - linux
+    - login
+    - security
+
+dependencies: []
