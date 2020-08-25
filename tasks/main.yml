@@ -8,7 +8,6 @@
     owner: root
     group: root
     mode: '0644'
-    state: present
   when: 'issue_deploy | bool'
 
 - name: Install {{ issue_net_location }}
